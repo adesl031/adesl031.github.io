@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAD Currency Converter</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script src="convertCurrency.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>CAD Currency Converter</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Convert CAD to Other Currencies and Vice-Versa</h2>
+            <div id="converterForm">
+                <label for="cadAmount">Amount in CAD:</label>
+                <input type="number" id="cadAmount">
+
+                <br>
+                <label for="foreignAmount">Amount in</label>
+                <select id="foreignCurrency" name="currency" required>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="GBP">GBP</option>
+                    <option value="JPY">JPY</option>
+                </select>
+                <input type="number" id="foreignAmount">
+
+                <br>
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                <br>
+                <label for="conversionType">Conversion Type:</label>
+                <select id="conversionType" name="conversionType" required>
+                    <option value="fromCAD">CAD to Foreign Currency</option>
+                    <option value="toCAD">Foreign Currency to CAD</option>
+                </select>
+                <br>
+                <button type="submit" onclick="convertCurrency();">Convert</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="../scripts/currencyConverter.js"></script>
+</body>
+
+</html>
