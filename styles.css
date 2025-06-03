@@ -1,13 +1,4 @@
 h1{
-    font-family: 'Dancing Script';
+    font-family: 'Alumni Sans SC';
     font-size: 50px;
-    color: rgb(132, 94, 40);
-    text-align: center;
-    font-weight: 100;
-    margin-bottom: -5px;
-    text-shadow: 1px 1px 1px rgb(100, 60, 20);
-    
-    animation: titleSize;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
 }
