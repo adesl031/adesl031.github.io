@@ -24,6 +24,17 @@ header {
     border: none;
     padding: 0.5em 1em;
     border-radius: 4px;
+}
+
+#valetAPI {
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 4px;
     cursor: pointer;
 }
 
