@@ -25,10 +25,10 @@ function convertCurrency() {
       console.log("Exchange Rate:", exchangeRate);
       if (conversionType === "toCAD") {
         document.getElementById("cadAmount").value =
-          Math.round(foreignAmount / exchangeRate*100) / 100;
+          Math.round(foreignAmount * exchangeRate*100) / 100;
       } else if (conversionType === "fromCAD") {
         document.getElementById("foreignAmount").value =
-          Math.round(cadAmount * exchangeRate*100) / 100;
+          Math.round(cadAmount / exchangeRate*100) / 100;
       }
     })
     .catch((error) => {
