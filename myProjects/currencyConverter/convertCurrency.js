@@ -21,7 +21,7 @@ function convertCurrency() {
     })
     .then((data) => {
       //console.log(data);
-      exchangeRate = parseFloat(data.observations[0].FXUSDCAD.v);
+      exchangeRate = parseFloat(data.observations[0][`FX${foreignCurrency}CAD`].v);
       console.log("Exchange Rate:", exchangeRate);
       if (conversionType === "toCAD") {
         document.getElementById("cadAmount").value =
