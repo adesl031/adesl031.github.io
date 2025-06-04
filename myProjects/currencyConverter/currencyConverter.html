@@ -5,54 +5,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CAD Currency Converter</title>
-    <link rel="stylesheet" href="../styles.css">
+    <script src="convertCurrency.js"></script>
+    <link rel="stylesheet" href="currencyConverter.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+SC:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <script src="convertCurrency.js"></script>
 </head>
 
 <body>
     <header>
-        <h1>CAD Currency Converter</h1>
+        <button id="backButton" onclick="window.history.back();"></button>
+            <h1>CAD Currency Converter</h1>
     </header>
 
     <main>
-        <section>
-            <h2>Convert CAD to Other Currencies and Vice-Versa</h2>
-            <div id="converterForm">
-                <label for="cadAmount">Amount in CAD:</label>
-                <input type="number" id="cadAmount">
+        <div class="half" id="left">
+            <input type="number" id="cadAmount" class="amount-input" placeholder="0.00">
+            <div class="currency-label">
+                <span>CAD</span>
+                <img src="Flags/canada.svg" alt="Canada Flag">
+            </div>
+        </div>
 
-                <br>
-                <label for="foreignAmount">Amount in</label>
-                <select id="foreignCurrency" name="currency" required>
+        <div class="half" id="right">
+            <input type="number" id="foreignAmount" class="amount-input" placeholder="0.00">
+            <div class="currency-label">
+                <select id="foreignCurrency" defaultValue="USD">
                     <option value="USD">USD</option>
                     <option value="EUR">EUR</option>
                     <option value="GBP">GBP</option>
                     <option value="JPY">JPY</option>
-                    <option value="JPY">AUD</option>
-                    <option value="JPY">NZD</option>
-                    <option value="JPY">CNY</option>
-                    <option value="JPY">HKD</option>
+                    <option value="AUD">AUD</option>
+                    <option value="NZD">NZD</option>
+                    <option value="CNY">CNY</option>
+                    <option value="HKD">HKD</option>
                 </select>
-                <input type="number" id="foreignAmount">
-
-                <br>
-                <label for="date">Date:</label>
-                <input type="date" id="date" name="date" required>
-                <br>
-                <label for="conversionType">Conversion Type:</label>
-                <select id="conversionType" name="conversionType" required>
-                    <option value="fromCAD">CAD to Foreign Currency</option>
-                    <option value="toCAD">Foreign Currency to CAD</option>
-                </select>
-                <br>
-                <button type="submit" onclick="convertCurrency();">Convert</button>
+                <img id="foreignFlag" src="Flags/us.svg" alt="Flag">
             </div>
-        </section>
+        </div>
     </main>
+
+    <div id="bottom-controls">
+        <label for="date">Date:</label>
+        <input type="date" id="date">
+
+        <label for="conversionType">Type:</label>
+        <select id="conversionType">
+            <option value="fromCAD">CAD to Foreign</option>
+            <option value="toCAD">Foreign to CAD</option>
+        </select>
+
+        <button onclick="convertCurrency();">Convert</button>
+    </div>
+
+    <script>
+        const flagMap = {
+            'USD': 'Flags/us.svg',
+            'EUR': 'Flags/eu.svg',
+            'GBP': 'Flags/uk.svg',
+            'JPY': 'Flags/japan.svg',
+            'AUD': 'Flags/australia.svg',
+            'NZD': 'Flags/nz.svg',
+            'CNY': 'Flags/china.svg',
+            'HKD': 'Flags/hk.svg'
+        };
+
+        const skylineMap = {
+            'USD': 'Skyline/us.jpeg',
+            'EUR': 'Skyline/eu.jpg',
+            'GBP': 'Skyline/uk.jpg',
+            'JPY': 'Skyline/japan.jpg',
+            'AUD': 'Skyline/australia.jpg',
+            'NZD': 'Skyline/nz.jpg',
+            'CNY': 'Skyline/china.jpg',
+            'HKD': 'Skyline/hk.jpg'
+        };
+
+        document.getElementById('foreignCurrency').addEventListener('change', function () {
+            const selected = this.value;
+            document.getElementById('foreignFlag').src = flagMap[selected];
+            let skylineURL = `url('${skylineMap[selected]}')`;
+            document.getElementById('right').style.setProperty('--bg-image', skylineURL);
+
+        });
+    </script>
 </body>
 
 </html>
