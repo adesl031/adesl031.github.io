@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Portal - StageLink</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .portal-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .portal-grid {
+            margin-left: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .portal-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .portal-card:hover {
+            transform: scale(1.03);
+        }
+
+        .portal-card h3 {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .portal-card span {
+            font-size: 40px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-section">
+            <div class="logo"><img src="Logo/Logo.png" alt="Logo"></div>
+            <h2>STAGELINK</h2>
+        </div>
+        <script>document.getElementsByClassName("logo-section")[0].addEventListener("click", () => { window.location.href = "index.html"; });</script>
+        <nav class="nav-links">
+            <a href="studentPortal.html">Students</a>
+            <a href="employerPortal.html">Employers</a>
+            <a href="#"><span class="material-symbols-outlined">language</span></a>
+        </nav>
+    </header>
+
+    <main class="portal-container">
+        <h2>Welcome to your student portal!</h2>
+        <div class="portal-grid">
+            <div class="portal-card">
+                <span class="material-symbols-outlined">article_person</span>
+                <h3>Modify Resume</h3>
+            </div>
+            <div class="portal-card">
+                <span class="material-symbols-outlined">manage_accounts</span>
+                <h3>Modify Information</h3>
+            </div>
+            <div class="portal-card">
+                <span class="material-symbols-outlined">assignment</span>
+                <h3>My Applications</h3>
+            </div>
+            <div class="portal-card">
+                <span class="material-symbols-outlined">chat</span>
+                <h3>My Messages</h3>
+            </div>
+            <div class="portal-card">
+                <span class="material-symbols-outlined">calendar_month</span>
+                <h3>My Calendar</h3>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

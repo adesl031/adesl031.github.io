@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Posting - StageLink</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back,language" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .job-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .job-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+        }
+
+        .job-details {
+            padding: 20px;
+        }
+
+        .job-details h2 {
+            margin-top: 0;
+        }
+
+        .job-details p {
+            margin: 8px 0;
+            color: #444;
+        }
+
+        #title-span {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        #apply-button {
+            background-color: #0066AC;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        #apply-button:hover {
+            background-color: #00509E;
+        }
+
+        #job-title {
+            margin-bottom: 0px;
+        }
+
+        .job-wrapper {
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, 0%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh;
+            position: relative;
+        }
+
+        #back-arrow {
+            position: absolute;
+            left: 5px;
+            top: 0%;
+            background: white;
+            border-radius: 50%;
+            padding: 6px;
+            font-size: 32px;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            z-index: 2;
+            transition: background 0.2s;
+        }
+
+        #back-arrow:hover {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo-section" style="cursor: pointer;">
+            <div class="logo"><img src="Logo/Logo.png" alt="Logo"></div>
+            <h2>STAGELINK</h2>
+        </div>
+        <nav class="nav-links">
+            <a href="studentPortal.html">Students</a>
+            <a href="employerPortal.html">Employers</a>
+            <a href="#"><span class="material-symbols-outlined">language</span></a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="job-wrapper">
+            <span class="material-symbols-outlined" id="back-arrow" onclick="window.history.back()">
+                arrow_back
+            </span>
+            <div class="job-container" id="job-container">
+                <div class="job-image"><img src="" alt="Company Logo" id="job-image" /></div>
+                <div class="job-details">
+                    <span id="title-span">
+                        <h2 id="job-title"></h2><button id="apply-button">Apply</button>
+                    </span>
+                    <p><strong>Company:</strong> <span id="job-company"></span></p>
+                    <p><strong>Location:</strong> <span id="job-location"></span></p>
+                    <p><strong>Duration:</strong> <span id="job-duration"></span></p>
+                    <p><strong>Salary:</strong> <span id="job-salary"></span></p>
+                    <p><strong>Description:</strong> <span id="job-description"></span></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementsByClassName("logo-section")[0].addEventListener("click", () => {
+            window.location.href = "index.html";
+        });
+
+        const job = JSON.parse(localStorage.getItem('selectedJob'));
+
+        if (job) {
+            document.getElementById('job-image').src = job.image;
+            document.getElementById('job-title').textContent = job.title;
+            document.getElementById('job-company').textContent = job.company;
+            document.getElementById('job-location').textContent = job.location;
+            document.getElementById('job-duration').textContent = job.duration;
+            document.getElementById('job-description').textContent = job.description;
+            document.getElementById('job-salary').textContent = job.salary ? `${job.salary}` : 'Not specified';
+        } else {
+            document.getElementById('job-container').innerHTML = '<p style="padding: 20px;">No job selected. Please go back and choose a posting.</p>';
+        }
+    </script>
+</body>
+
+</html>
