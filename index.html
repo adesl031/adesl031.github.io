@@ -17,7 +17,9 @@
         }
 
         .skill-tag:hover {
-            background-color: #f3f4f6;
+            background-color: #b0c0e4;
+            color: black;
+            cursor: default;
         }
 
         .dark .skill-tag:hover {
@@ -50,25 +52,26 @@
         }
 
         .experience-toggle-label::after {
-            content: '+';
+            content: ' +';
             float: right;
             transition: transform 0.3s;
         }
 
         .experience-toggle:checked~.experience-toggle-label::after {
-            content: '-';
+            content: ' -';
         }
     </style>
     <style>
-    @font-face {
-        font-family: 'Libertinus Serif Display';
-        src: url('LibertinusSerifDisplay-Regular.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-    }
-    .libertinus-display {
-        font-family: 'Libertinus Serif Display', serif !important;
-    }
+        @font-face {
+            font-family: 'Libertinus Serif Display';
+            src: url('LibertinusSerifDisplay-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .libertinus-display {
+            font-family: 'Libertinus Serif Display', serif !important;
+        }
     </style>
 </head>
 
@@ -78,7 +81,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <span class="libertinus-display text-xl font-bold text-gray-800 dark:text-white">AD</span>
+                    <span class="libertinus-display text-xl font-bold text-gray-800 dark:text-white" style="cursor: pointer;">AD</span>
                 </div>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#about"
@@ -191,7 +194,8 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Education</h4>
-                                <p class="text-gray-600 dark:text-gray-300">Double degree from the University of Ottawa with a 97% CGPA</p>
+                                <p class="text-gray-600 dark:text-gray-300">Double degree from the University of Ottawa
+                                    with a 97% CGPA</p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -209,7 +213,8 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Skills</h4>
-                                <p class="text-gray-600 dark:text-gray-300">SolidWorks, CATIA V5, Fusion360, Python, Java, C++, JavaScript, PHP, HTML, CSS, Electronics</p>
+                                <p class="text-gray-600 dark:text-gray-300">SolidWorks, CATIA V5, Fusion360, Python,
+                                    Java, C++, JavaScript, PHP, HTML, CSS, Electronics</p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -248,11 +253,13 @@
                             <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">
                                 <span class="text-sm font-medium text-indigo-600 dark:text-indigo-400">08/2025 -
                                     Present</span>
-                                <h3 class="text-xl font-bold text-gray-800 dark:text-white mt-2">Product Engineer Intern</h3>
+                                <h3 class="text-xl font-bold text-gray-800 dark:text-white mt-2">Product Engineer Intern
+                                </h3>
                                 <h4 class="text-lg font-semibold text-gray-600 dark:text-gray-300">Food Cycle Science
                                 </h4>
                                 <p class="text-gray-600 dark:text-gray-300 mt-2">
-                                    Contributed to the design and development of new unreleased products, focusing on food waste
+                                    Contributed to the design and development of new unreleased products, focusing on
+                                    food waste
                                     reduction and sustainability.
                                 </p>
                                 <input type="checkbox" id="exp1" class="experience-toggle hidden">
@@ -260,12 +267,15 @@
                                     class="experience-toggle-label text-indigo-600 dark:text-indigo-400 text-sm font-medium mt-3 cursor-pointer">Key
                                     Achievements</label>
                                 <div
-                                    class="experience-details mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-700">
+                                    class="experience-details mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-700 text-left">
                                     <ul class="list-disc text-gray-600 dark:text-gray-300 space-y-1 pl-5">
                                         <li>Designed and prototyped mechanical components using SolidWorks</li>
-                                        <li>Conducted FEA simulations to optimize product durability and performance</li>
-                                        <li>Collaborated with cross-functional teams to integrate electronics features</li>
-                                        <li>Assisted in user testing and feedback analysis to refine product designs</li>
+                                        <li>Conducted FEA simulations to optimize product durability and performance
+                                        </li>
+                                        <li>Collaborated with cross-functional teams to integrate electronics features
+                                        </li>
+                                        <li>Assisted in user testing and feedback analysis to refine product designs
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -286,11 +296,13 @@
                             <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">
                                 <span class="text-sm font-medium text-indigo-600 dark:text-indigo-400">09/2023 -
                                     12/2023</span>
-                                <h3 class="text-xl font-bold text-gray-800 dark:text-white mt-2">Mechanical Engineer Intern</h3>
+                                <h3 class="text-xl font-bold text-gray-800 dark:text-white mt-2">Mechanical Engineer
+                                    Intern</h3>
                                 <h4 class="text-lg font-semibold text-gray-600 dark:text-gray-300">Jabil Inc.
                                 </h4>
                                 <p class="text-gray-600 dark:text-gray-300 mt-2">
-                                    Co-led the thermal analysis and optimization process of new 5G radio units. Designed and performed a comparative analysis of various heat sink models.
+                                    Co-led the thermal analysis and optimization process of new 5G radio units. Designed
+                                    and performed a comparative analysis of various heat sink models.
                                 </p>
                                 <input type="checkbox" id="exp2" class="experience-toggle hidden">
                                 <label for="exp2"
@@ -299,10 +311,16 @@
                                 <div
                                     class="experience-details mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-700">
                                     <ul class="list-disc text-gray-600 dark:text-gray-300 space-y-1 pl-5">
-                                        <li>Utilized SolidWorks Flow Simulation to analyze and compare the thermal performance of various radio heat sink designs under different wind scenarios, including variations in direction and speed.</li>
-                                        <li>Led bi-weekly technical meetings to present simulation progress and to provide recommendations to the engineering team.</li>
-                                        <li>Designed and optimized mounting brackets for 5G radio equipment, ensuring structural integrity and compatibility with specifications.</li>
-                                        <li>Performed comparative thermal simulations on real radio equipment, using precision drilling to install thermocouples on critical components and validating simulation accuracy against real-world thermal data.</li>
+                                        <li>Utilized SolidWorks Flow Simulation to analyze and compare the thermal
+                                            performance of various radio heat sink designs under different wind
+                                            scenarios, including variations in direction and speed.</li>
+                                        <li>Led bi-weekly technical meetings to present simulation progress and to
+                                            provide recommendations to the engineering team.</li>
+                                        <li>Designed and optimized mounting brackets for 5G radio equipment, ensuring
+                                            structural integrity and compatibility with specifications.</li>
+                                        <li>Performed comparative thermal simulations on real radio equipment, using
+                                            precision drilling to install thermocouples on critical components and
+                                            validating simulation accuracy against real-world thermal data.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -315,24 +333,37 @@
                             <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg">
                                 <span class="text-sm font-medium text-indigo-600 dark:text-indigo-400">01/2023 -
                                     08/2023</span>
-                                <h3 class="text-xl font-bold text-gray-800 dark:text-white mt-2">Manufacturing Automation Engineer Intern</h3>
-                                <h4 class="text-lg font-semibold text-gray-600 dark:text-gray-300">Pratt & Whitney Canada
+                                <h3 class="text-xl font-bold text-gray-800 dark:text-white mt-2">Manufacturing
+                                    Automation Engineer Intern</h3>
+                                <h4 class="text-lg font-semibold text-gray-600 dark:text-gray-300">Pratt & Whitney
+                                    Canada
                                 </h4>
                                 <p class="text-gray-600 dark:text-gray-300 mt-2">
-                                    Modeled and tested a robotic arm gripper. Co-led the development of an innovative web-based platform for manufacturing operation consulting on the shop floor.
+                                    Modeled and tested a robotic arm gripper. Co-led the development of an innovative
+                                    web-based platform for manufacturing operation consulting on the shop floor.
                                 </p>
                                 <input type="checkbox" id="exp3" class="experience-toggle hidden">
                                 <label for="exp3"
                                     class="experience-toggle-label text-indigo-600 dark:text-indigo-400 text-sm font-medium mt-3 cursor-pointer">Key
                                     Achievements</label>
                                 <div
-                                    class="experience-details mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-700">
+                                    class="experience-details mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-700 text-left">
                                     <ul class="list-disc text-gray-600 dark:text-gray-300 space-y-1 pl-5">
-                                        <li>Developed a web-based platform for visualizing and interacting with manufacturing operations on the shop floor, integrating detailed Manufacturing Operation Sheets to demonstrate the benefits of model-based manufacturing methodologies. Successfully completed the project in 4 months using JavaScript, PHP, HTML, and CSS, and presented the results to senior leadership of the company.</li>
-                                        <li>Collaborated in the design and implementation of a mySQL database to store and manage manufacturing and inspection data, ensuring seamless integration with the web interface that I was solely responsible for.</li>
-                                        <li>Independently designed, prototyped and 3D printed a tool used by an inspection robotic arm using CATIA V5. This part will be used by the shop floor inspection team on a frequent basis, completing over 10,000 usage cycles every week.</li>
-                                        <li>Individually developed a Python point cloud cluster detector for 3D inspection programs in PolyWorks.</li>
-                                        <li>Independently wrote a Python program that can efficiently extract RGB color codes from individual points of a 3D scan and its Bitmap.</li>
+                                        <li>Developed a web-based platform for visualizing and interacting with
+                                            manufacturing operations on the shop floor, integrating detailed
+                                            Manufacturing Operation Sheets to demonstrate the benefits of model-based
+                                            manufacturing methodologies. Successfully completed the project in 4 months
+                                            using JavaScript, PHP, HTML, and CSS, and presented the results to senior
+                                            leadership of the company.</li>
+                                        <li>Collaborated in the design and implementation of a mySQL database to store
+                                            and manage manufacturing and inspection data, ensuring seamless integration
+                                            with the web interface that I was solely responsible for.</li>
+                                        <li>Independently designed, prototyped and 3D printed a tool used by an
+                                            inspection robotic arm using CATIA V5.</li>
+                                        <li>Individually developed a Python point cloud cluster detector for 3D
+                                            inspection programs in PolyWorks.</li>
+                                        <li>Independently wrote a Python program that can efficiently extract RGB color
+                                            codes from individual points of a 3D scan and its Bitmap.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -357,20 +388,27 @@
                                 <h4 class="text-lg font-semibold text-gray-600 dark:text-gray-300">Bombardier Aerospace
                                 </h4>
                                 <p class="text-gray-600 dark:text-gray-300 mt-2">
-                                    Programmed web-driver automation scripts to manage and optimize the workflow of a large-scale LMS platform.
+                                    Programmed web-driver automation scripts to manage and optimize the workflow of a
+                                    large-scale LMS platform.
                                 </p>
-                                <input type="checkbox" id="exp2" class="experience-toggle hidden">
-                                <label for="exp2"
+                                <input type="checkbox" id="exp4" class="experience-toggle hidden">
+                                <label for="exp4"
                                     class="experience-toggle-label text-indigo-600 dark:text-indigo-400 text-sm font-medium mt-3 cursor-pointer">Key
                                     Achievements</label>
                                 <div
                                     class="experience-details mt-2 pl-4 border-l-2 border-gray-200 dark:border-gray-700">
                                     <ul class="list-disc text-gray-600 dark:text-gray-300 space-y-1 pl-5">
-                                        <li>Received an overall internship evaluation of Exceptional from my supervisor.</li>
-                                        <li>Individually developed a WebDriver automation program to validate and verify that all 1,000 Bombardier online formations worked correctly.</li>
-                                        <li>Communicated with Bombardier offices in Texas, Mexico, and Toronto to determine and write a document detailing the impacts that a new LMS platform would have on their work process.</li>
-                                        <li>Contacted over 100 employees from various countries to update the Bombardier LMS data stored in Excel files and PowerBI visuals.</li>
-                                        <li>Individually developed a WebDriver automation program to clean up and filter over 20,000 user profiles in the old Bombardier LMS platform.</li>
+                                        <li>Received an overall internship evaluation of Exceptional from my supervisor.
+                                        </li>
+                                        <li>Individually developed a WebDriver automation program to validate and verify
+                                            that all 1,000 Bombardier online formations worked correctly.</li>
+                                        <li>Communicated with Bombardier offices in Texas, Mexico, and Toronto to
+                                            determine and write a document detailing the impacts that a new LMS platform
+                                            would have on their work process.</li>
+                                        <li>Contacted over 100 employees from various countries to update the Bombardier
+                                            LMS data stored in Excel files and PowerBI visuals.</li>
+                                        <li>Individually developed a WebDriver automation program to clean up and filter
+                                            over 20,000 user profiles in the old Bombardier LMS platform.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -388,8 +426,8 @@
                 <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">Featured Projects</h2>
                 <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
                 <p class="text-gray-600 dark:text-gray-300 mt-4 max-w-2xl mx-auto">
-                    A selection of projects that showcase my interdisciplinary skills in mechanical engineering and
-                    computing technology.
+                    A selection of projects that showcase my interdisciplinary skills in mechanical design, programming
+                    and electronics.
                 </p>
             </div>
             <!-- Projects Grid -->
@@ -401,7 +439,8 @@
                         class="w-full h-48 object-cover">
                     <div class="p-6">
                         <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Casptone: Tire Handler</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">Mechanical Engineering capstone project featuring automated
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">Mechanical Engineering capstone project
+                            featuring automated
                             tire handling system with robotic arm integration.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span
@@ -605,13 +644,16 @@
                 <!-- three symbols, centered with the page. one for e-mail, linkedin and github -->
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <div class="flex justify-center space-x-6">
-                        <a href="mailto:deslauriers.antoine6@gmail.com" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
+                        <a href="mailto:deslauriers.antoine6@gmail.com"
+                            class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
                             <i data-feather="mail" class="w-6 h-6"></i>
                         </a>
-                        <a href="https://www.linkedin.com/in/antoinedeslauriers/" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
+                        <a href="https://www.linkedin.com/in/antoinedeslauriers/" target="_blank"
+                            class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
                             <i data-feather="linkedin" class="w-6 h-6"></i>
                         </a>
-                        <a href="https://github.com/adesl031" target="_blank" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
+                        <a href="https://github.com/adesl031" target="_blank"
+                            class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
                             <i data-feather="github" class="w-6 h-6"></i>
                         </a>
                     </div>
