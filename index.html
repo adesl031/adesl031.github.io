@@ -8,8 +8,7 @@
     <link rel="shortcut icon" href="favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script> -->
     <style>
         .project-card:hover {
             transform: translateY(-5px);
@@ -134,10 +133,11 @@
                 <div class="md:w-1/2 mb-10 md:mb-0">
                     <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-4">Hi, I'm <span
                             class="text-indigo-600 dark:text-indigo-400">Antoine</span></h1>
-                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-600 dark:text-gray-300 mb-6">Mechanical
-                        Engineering & Computing Technology Graduate</h2>
-                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">Bridging the gap between hardware and
-                        software with innovative solutions.</p>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-gray-600 dark:text-gray-300 mb-6">6th-year
+                        Mechanical
+                        Engineering & Computing Technology Student</h2>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">Avid designer and programmer with extensive
+                        work experience and participation in engineering competitions</p>
                     <div class="flex space-x-4">
                         <a href="#contact"
                             class="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition shadow-lg">Contact
@@ -151,7 +151,7 @@
                     <div class="relative">
                         <div
                             class="w-64 h-64 md:w-80 md:h-80 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden shadow-xl">
-                            <img src="profilePhoto.jpeg" alt="Profile" class="w-full h-full object-cover">
+                            <img src="profilePhoto.png" alt="Profile" class="w-full h-full object-cover">
                         </div>
                         <div class="absolute -bottom-5 -right-5 bg-white dark:bg-gray-800 p-4 rounded-lg shadow-sm">
                             <div class="flex items-center">
@@ -663,9 +663,8 @@
     </section>
 
     <section id="contact">
-        <!-- three symbols, centered with the page. one for e-mail, linkedin and github -->
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="flex justify-center space-x-6">
+            <div class="flex justify-center space-x-6" style="padding-bottom: 50px;">
                 <a href="mailto:deslauriers.antoine6@gmail.com"
                     class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400">
                     <i data-feather="mail" class="w-6 h-6"></i>
@@ -683,5 +682,9 @@
     </section>
 
 </body>
+
+<script>
+    feather.replace();
+</script>
 
 </html>
