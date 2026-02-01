@@ -35,6 +35,10 @@
         .libertinus-display {
             font-family: 'Libertinus Serif Display', serif !important;
         }
+
+        #summaryWidgets div:hover h4, #summaryWidgets div:hover p{
+            color: #7785d5;
+        }
     </style>
 </head>
 
@@ -62,7 +66,7 @@
             </h1>
 
             <div class="relative overflow-hidden rounded-xl shadow-xl bg-black">
-                <img id="slide" src="media/slide1.png" class="w-full h-[300px] md:h-[450px] object-contain fade"
+                <img id="slide" class="w-full h-[300px] md:h-[450px] object-contain fade" style="object-fit: cover;"
                     alt="Project media">
 
                 <!-- Controls -->
@@ -105,9 +109,6 @@
                 </p>
 
                 <ul id="solution-list" class="list-disc pl-6 mt-4 text-gray-600 dark:text-gray-300 space-y-2">
-                    <li>Key design choice or innovation</li>
-                    <li>Technologies / software used</li>
-                    <li>Manufacturing, coding, or analysis methods</li>
                 </ul>
             </div>
 
@@ -121,7 +122,7 @@
                     or real-world impact.
                 </p>
 
-                <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div id="summaryWidgets" class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
                         <h4 class="font-semibold text-gray-800 dark:text-white">Performance</h4>
                         <p class="text-sm text-gray-600 dark:text-gray-300">Metric or result</p>
@@ -145,6 +146,7 @@
             "tire-handler": {
                 "title": "Capstone: Tire Handler",
                 "folder": "Tire Handler",
+                "slides": ["cover.png", "groupPhoto.jpg"],
                 "objective": "Design an automated system to safely handle and transport heavy tires in a manufacturing environment.",
                 "solution": {
                     "text": "A modular mechanical system was designed with custom fixtures and sensor-based alignment.",
@@ -159,7 +161,8 @@
 
             "bip": {
                 "title": "Bearing Identification Platform",
-                "objective": "Develop a bearing identification program using computer vision techniques, and a web interface.",
+                "folder": "Bearing Identification Platform",
+                "objective": "Identify the model number of a bearing through a user friendly graphic interface and a stand to photograph the bearing.",
                 "solution": {
                     "text": "Developed a bearing identification program using computer vision techniques. Deployed OpenCV for image processing and coded a web interface with an integrated database for storing bearing specifications.",
                     "bullets": [
@@ -168,7 +171,7 @@
                         "Web interface with database integration"
                     ]
                 },
-                "result": "Won the 2021 uOttawa Design Day competition in collaboration with General Bearing Services."
+                "result": "Won 1st place in the 2021 uOttawa Engineering Design Day award for bearing identification programs.\n Invited to continue working with the owner of General Bearing Services who was interested in purchasing the product for his stores across Ontario and Quebec.\n Uses an image measuring Python program that I coded to measure bearings with high-accuracy.\n Web Interface was coded in Python and communicates with an integrated data base of bearing models."
             }
         }
 
@@ -182,21 +185,18 @@
         document.getElementById("projectTitle").innerText = project.title;
         document.getElementById("objective").innerText = project.objective;
         document.getElementById("solution").innerText = project.solution.text;
-        const solutionBullets = document.getElementById("solution-bullets");
-        solutionBullets.innerHTML = "";
-        project.solution.bullets.forEach(bullet => {
+        for (const bullet of project.solution.bullets) {
             const li = document.createElement("li");
-            li.textContent = bullet;
-            solutionBullets.appendChild(li);
-        });
+            li.innerText = bullet;
+            document.getElementById("solution-list").appendChild(li);
+        }
         document.getElementById("result").innerText = project.result;
         // Additional dynamic content population can be added here
-
 
         feather.replace();
 
         // get all media in the project folder
-        slides = [];
+        const slides = project.slides.map(file => `${project.folder}/${file}`);
 
         let current = 0;
         const img = document.getElementById("slide");
@@ -217,6 +217,8 @@
             current = (current - 1 + slides.length) % slides.length;
             showSlide(current);
         }
+        
+        showSlide(current);
     </script>
 
 </body>
