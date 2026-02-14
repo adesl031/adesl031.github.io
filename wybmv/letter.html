@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Valentine's Day</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            /* background: linear-gradient(to top, #e8f5e9, #ffffff); */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .flower-container {
+            position: relative;
+            width: 200px;
+            height: 400px;
+        }
+
+        .flowers-ground {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 400px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .flower-container {
+            position: absolute;
+            bottom: 0;
+            pointer-events: auto;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        /* Stem */
+        .stem {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 6px;
+            height: 0;
+            background: #2e7d32;
+            transform: translateX(-50%);
+            animation: growStem 2s ease-out forwards;
+        }
+
+        @keyframes growStem {
+            to {
+                height: 200px;
+            }
+        }
+
+        /* Leaves */
+        .leaf {
+            position: absolute;
+            width: 60px;
+            height: 30px;
+            background: #43a047;
+            border-radius: 50% 50% 50% 0;
+            opacity: 0;
+        }
+
+        .leaf.left {
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-100%) rotate(-30deg) scale(0);
+            animation: growLeafLeft 1s 1.8s ease-out forwards;
+        }
+
+        .leaf.right {
+            bottom: 160px;
+            left: 50%;
+            transform: rotate(30deg) scale(0);
+            animation: growLeafRight 1s 2s ease-out forwards;
+        }
+
+        @keyframes growLeafLeft {
+            to {
+                opacity: 1;
+                transform: translateX(-100%) rotate(-30deg) scale(1);
+            }
+        }
+
+        @keyframes growLeafRight {
+            to {
+                opacity: 1;
+                transform: rotate(30deg) scale(1);
+            }
+        }
+
+        /* Flower */
+        .flower {
+            position: absolute;
+            bottom: 200px;
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            width: 120px;
+            height: 120px;
+            animation: bloom 1.5s 2.5s ease-out forwards;
+        }
+
+        @keyframes bloom {
+            to {
+                transform: translateX(-50%) scale(1);
+            }
+        }
+
+        /* Petals */
+        .petal {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-radius: 60% 60% 60% 60%;
+        }
+
+        .petal.top {
+            top: 0;
+            left: 25px;
+            transform: rotate(0deg);
+        }
+
+        .petal.left {
+            top: 30px;
+            left: 0;
+            transform: rotate(-40deg);
+        }
+
+        .petal.right {
+            top: 30px;
+            right: 0;
+            transform: rotate(40deg);
+        }
+
+        .petal.bottom {
+            bottom: 0;
+            left: 25px;
+            transform: rotate(180deg);
+        }
+
+        /* Center */
+        .center {
+            position: absolute;
+            top: 45px;
+            left: 45px;
+            width: 30px;
+            height: 30px;
+            background: #ffeb3b;
+            border-radius: 50%;
+        }
+    </style>
+
+    <style>
+        body {
+            background: linear-gradient(0deg, rgba(255, 196, 241, 1) 0%, rgb(255, 111, 111) 100%);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+
+            -webkit-touch-callout: none;
+            /* iOS Safari */
+            -webkit-user-select: none;
+            /* Chrome, Safari, Opera */
+            -khtml-user-select: none;
+            /* Konqueror HTML */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* Internet Explorer/Edge */
+            user-select: none;
+            /* Standard syntax */
+        }
+
+        .container {
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+            padding-top: 50px;
+            text-align: left;
+            height: 100vh;
+            margin: 0 25% 0 25%;
+            z-index: 10;
+
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+
+        /* Polaroid Photo */
+        .polaroid {
+            position: fixed;
+            top: 30px;
+            right: 40px;
+            background: white;
+            padding: 10px 10px 30px 10px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            transform: rotate(8deg);
+            z-index: 5;
+            cursor: grab;
+            user-select: none;
+        }
+
+        .polaroid img {
+            display: block;
+            width: 220px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="polaroid">
+        <img draggable="false" src="us.JPG">
+    </div>
+    <div class="container">
+        Dear Sweet Pea,<br><br>
+
+        Words can’t begin to describe how much I’ve enjoyed being with you over the past months. <br><br>
+
+        Last summer, you entered my life, and as we started spending time together, I realized I wanted you to be a
+        permanent part of it. From that point on, seeing you has always been the highlight of my week, the moment I look
+        forward to every single day. The more we spent time together, the more I saw how kind, gentle, and a little
+        clumsy you were. Among all those special qualities, I have always known that you are the most beautiful girl
+        that I have ever laid my eyes on. I lose myself in your gorgeous blue eyes every time I see you, and even the
+        simple thought of your smile is enough to make me the happiest man on earth for a short moment.
+        <br><br>
+        Although our decision to start dating wasn’t made right away, I had no doubt that I couldn’t let you walk out of
+        my life. Coming back from the cottage after you had left for BC, I told Grace that you were too special for me
+        to not take a chance on long distance. I explained that I would much rather be with you, even though we’re
+        thousands of kilometers apart, than to not have you at all. Over time, I have never doubted our decision, and I
+        can’t wait for time to continue to prove just that.
+        <br><br>
+        I love you so much Dominique. I count myself so lucky to have you in my life, and am so excited for what the
+        future has in store for us.
+        <br><br>
+        Happy Valentine’s Day my girl, I can’t wait to see you soon.
+        <br><br>
+        Yours,
+        <br><br>
+        Antoine
+    </div>
+    <div class="flowers-ground" id="flowersGround"></div>
+
+    <script>
+        window.addEventListener("load", () => {
+            const ground = document.getElementById("flowersGround");
+
+            const gradients = [
+                "radial-gradient(circle at 30% 30%, #ff8a80, #E797E8)",   // pink/red
+                "radial-gradient(circle at 30% 30%, #ff80ab, #8e24aa)",   // pink/purple
+                "radial-gradient(circle at 30% 30%, #E38FD3, #FDCDFA)",
+                "radial-gradient(circle at 30% 30%, #4185DF, #12388B)",
+            ];
+
+            const flowerCount = Math.floor(Math.random() * 3) + 4; //  flowers
+
+            // Pick one flower index that will bloom first
+            const firstFlowerIndex = Math.floor(Math.random() * flowerCount);
+
+            const flowerWidth = 200;
+            const segmentWidth = window.innerWidth / flowerCount;
+
+            for (let i = 0; i < flowerCount; i++) {
+
+                // Position each flower inside its own horizontal segment (prevents overlap)
+                const minX = i * segmentWidth;
+                const maxX = minX + segmentWidth - flowerWidth;
+                const x = minX + Math.random() * Math.max(0, (maxX - minX));
+
+                const container = document.createElement("div");
+                container.className = "flower-container";
+                container.style.left = `${x}px`;
+
+                // Random height scaling
+                const randomScale = 0.8 + Math.random() * 0.5;
+                container.style.transformOrigin = "bottom center";
+
+                let currentOffset = 0;
+                container.style.transform = `translateY(${currentOffset}px) scale(${randomScale})`;
+
+                // Each click moves flower down 20px
+                container.addEventListener("click", () => {
+                    currentOffset += 40;
+                    container.style.transform = `translateY(${currentOffset}px) scale(${randomScale})`;
+                });
+
+
+                container.innerHTML = `
+      <div class="stem"></div>
+      <div class="leaf left"></div>
+      <div class="leaf right"></div>
+      <div class="flower">
+        <div class="petal top"></div>
+        <div class="petal left"></div>
+        <div class="petal right"></div>
+        <div class="petal bottom"></div>
+        <div class="center"></div>
+      </div>
+    `;
+
+                // Determine animation delay
+                let delay = 0;
+                if (i !== firstFlowerIndex) {
+                    delay = 0.3 + Math.random() * 0.2; // 0.3-0.5s
+                }
+
+                // Apply delay to animated elements inside this flower
+                const animatedElements = container.querySelectorAll(".stem, .leaf.left, .leaf.right, .flower");
+                animatedElements.forEach(el => {
+                    el.style.animationDelay = `${delay}s`;
+                });
+
+                ground.appendChild(container);
+
+                const petals = container.querySelectorAll(".petal");
+                petals.forEach(petal => {
+                    const randomGradient = gradients[Math.floor(Math.random() * gradients.length)];
+                    petal.style.background = randomGradient;
+                });
+            }
+        });
+
+        // Make polaroid draggable
+        const polaroid = document.querySelector(".polaroid");
+
+        let isDragging = false;
+        let offsetX, offsetY;
+
+        polaroid.addEventListener("mousedown", (e) => {
+            isDragging = true;
+            polaroid.style.cursor = "grabbing";
+
+            const rect = polaroid.getBoundingClientRect();
+            offsetX = e.clientX - rect.left;
+            offsetY = e.clientY - rect.top;
+        });
+
+        document.addEventListener("mousemove", (e) => {
+            if (!isDragging) return;
+
+            polaroid.style.left = `${e.clientX - offsetX}px`;
+            polaroid.style.top = `${e.clientY - offsetY}px`;
+            polaroid.style.right = "auto"; // disable right positioning once moved
+        });
+
+        document.addEventListener("mouseup", () => {
+            isDragging = false;
+            polaroid.style.cursor = "grab";
+        });
+    </script>
+
+</body>
+
+</html>

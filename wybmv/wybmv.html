@@ -49,6 +49,20 @@
         button:hover {
             background-color: darkred;
         }
+
+        #hidden-button {
+            background-color: transparent;
+            color: transparent;
+            border: none;
+            padding: 5px;
+            margin-top: 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #hidden-button:hover {
+            color: rgba(255, 0, 0, 0.109);
+            border: 1px solid rgba(255, 0, 0, 0.109);
+        }
     </style>
 </head>
 
@@ -61,6 +75,7 @@
                 <button id="yes-button" onclick="yes()">Yes</button>
                 <button id="no-button" onmouseover="no()">No</button>
             </div>
+            <button hidden id="hidden-button" onclick="showLetter()">Secret Message</button>
         </div>
 
         <script>
@@ -69,6 +84,7 @@
             const computedStyle = window.getComputedStyle(yesBtn);
             const loveImage = document.getElementById("love-image");
             const header = document.getElementById("header");
+            const hiddenBtn = document.getElementById("hidden-button");
 
             function yes() {
                 header.innerText = "Yay! Great decision!";
@@ -78,6 +94,8 @@
 
                 yesBtn.style.display = "none";
                 noBtn.style.display = "none";
+
+                hiddenBtn.hidden = false;
             }
 
             function no() {
@@ -106,7 +124,10 @@
                     header.innerText = "Damn what the hell...";
                     loveImage.src = "sad.gif";
                 }
-
+            }
+            
+            function showLetter() {
+                window.location.href = "letter.html";
             }
         </script>
 
